@@ -1,16 +1,23 @@
 """Génère une carte SVG animée par jeu Roblox, avec les chiffres en direct.
 
-Usage : python jeux.py <dossier_sortie> [--sans-icone]
+Usage : python jeux.py <dossier_sortie> [--precedent <dossier>] [--sans-icone]
 Ajoute un jeu en ajoutant son identifiant de place dans JEUX.
+
+Les joueurs en ligne sont relus à chaque passage (toutes les 5 minutes).
+Les visites, favoris, j'aime et l'icône ne sont rafraîchis qu'une fois par heure :
+entre deux, on reprend les valeurs gardées dans etat-jeux.json du passage précédent.
 """
 import base64
 import html
 import json
+import os
 import re
 import sys
+import time
 import urllib.request
 
 JEUX = [129135814237722]  # +1 Spider Evolution
+RAFRAICHIR_STATS = 3600  # secondes entre deux mises à jour des stats lentes
 
 OR, BG, TXT, MUTED, LINE, GREEN = "#FD843C", "#121214", "#FFFFFF", "#8A8B94", "#2C2D33", "#3DD68C"
 SANS = "'Helvetica Neue', Helvetica, Arial, sans-serif"
@@ -23,22 +30,26 @@ def get(url, raw=False):
     return data if raw else json.loads(data)
 
 
-def infos(place, icone=True):
+def infos(place, icone=True, ancien=None):
+    """Lit le jeu sur Roblox. `ancien` (stats lentes de moins d'une heure) évite de les relire."""
     uid = get(f"https://apis.roblox.com/universes/v1/places/{place}/universe")["universeId"]
     g = get(f"https://games.roblox.com/v1/games?universeIds={uid}")["data"][0]
+    accroche = next((l for l in g["description"].splitlines() if l.strip()), "")
+    accroche = re.sub("[^\u0000-\uFFFF]|\uFE0F", "", accroche).strip()
+    j = {"place": place, "nom": g["name"], "studio": g["creator"]["name"], "accroche": accroche, "joueurs": g["playing"]}
+    if ancien:
+        j.update({k: ancien[k] for k in ("visites", "favoris", "aime", "icone")})
+        j["maj"] = ancien["maj"]
+        return j
     v = get(f"https://games.roblox.com/v1/games/votes?universeIds={uid}")["data"][0]
+    votes = v["upVotes"] + v["downVotes"]
     img = None
     if icone:
         url = get(f"https://thumbnails.roblox.com/v1/games/icons?universeIds={uid}&size=512x512&format=Png")["data"][0]["imageUrl"]
         img = "data:image/png;base64," + base64.b64encode(get(url, raw=True)).decode()
-    votes = v["upVotes"] + v["downVotes"]
-    accroche = next((l for l in g["description"].splitlines() if l.strip()), "")
-    accroche = re.sub(r"[^\u0000-￿]|️", "", accroche).strip()
-    return {
-        "place": place, "nom": g["name"], "studio": g["creator"]["name"], "accroche": accroche,
-        "joueurs": g["playing"], "visites": g["visits"], "favoris": g["favoritedCount"],
-        "aime": round(100 * v["upVotes"] / votes) if votes else None, "icone": img,
-    }
+    j.update({"visites": g["visits"], "favoris": g["favoritedCount"],
+              "aime": round(100 * v["upVotes"] / votes) if votes else None, "icone": img, "maj": time.time()})
+    return j
 
 
 def court(n):
@@ -137,13 +148,27 @@ TITRE_MOBILE = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 50" w
                 f'<text x="0" y="32" font-family="{MONO}" font-size="17" font-weight="700" fill="{OR}" letter-spacing="3">MES JEUX</text>'
                 f'<rect x="124" y="26" width="276" height="2" fill="{OR}" fill-opacity=".35"/></svg>')
 
+def charger_etat(dossier):
+    try:
+        return json.load(open(os.path.join(dossier, "etat-jeux.json"), encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        return {}
+
+
 if __name__ == "__main__":
     out = sys.argv[1]
     avec_icone = "--sans-icone" not in sys.argv
+    precedent = sys.argv[sys.argv.index("--precedent") + 1] if "--precedent" in sys.argv else None
+    etat = charger_etat(precedent) if precedent else {}
+    nouvel_etat = {}
     open(f"{out}/titre-jeux.svg", "w", encoding="utf-8").write(TITRE)
     open(f"{out}/titre-jeux-mobile.svg", "w", encoding="utf-8").write(TITRE_MOBILE)
     for place in JEUX:
-        j = infos(place, avec_icone)
+        ancien = etat.get(str(place))
+        frais = ancien and time.time() - ancien.get("maj", 0) < RAFRAICHIR_STATS and (ancien.get("icone") or not avec_icone)
+        j = infos(place, avec_icone, ancien if frais else None)
+        nouvel_etat[str(place)] = {k: j[k] for k in ("maj", "visites", "favoris", "aime", "icone")}
         open(f"{out}/jeu-{place}.svg", "w", encoding="utf-8").write(carte(j))
         open(f"{out}/jeu-{place}-mobile.svg", "w", encoding="utf-8").write(carte_mobile(j))
-        print(j["nom"], j["joueurs"], j["visites"], j["favoris"], j["aime"])
+        print(j["nom"], "joueurs", j["joueurs"], "| stats lentes", "gardées" if frais else "rafraîchies", j["visites"], j["favoris"], j["aime"])
+    json.dump(nouvel_etat, open(f"{out}/etat-jeux.json", "w", encoding="utf-8"))

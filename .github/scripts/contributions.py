@@ -1,13 +1,22 @@
 """Génère des cartes SVG animées des contributions GitHub (style orange du profil).
 
-Usage : python contributions.py <utilisateur> <dossier_sortie> [fichier_html_local]
+Usage : python contributions.py <utilisateur> <dossier_sortie> [--precedent <dossier>] [--html <fichier_local>]
 Lit le calendrier public https://github.com/users/<utilisateur>/contributions.
+Les cartes ne sont régénérées qu'une fois par heure : entre deux, on recopie
+celles du passage précédent (dossier --precedent).
 """
 import datetime as dt
 import html
+import json
+import os
 import re
+import shutil
 import sys
+import time
 import urllib.request
+
+RAFRAICHIR = 3600  # secondes entre deux régénérations
+FICHIERS = ("contributions.svg", "contributions-mobile.svg")
 
 OR, OR2, INK, BG, CELL0, TXT, MUTED = "#FD843C", "#FD5D57", "#111111", "#121214", "#1E1F24", "#FFFFFF", "#8A8B94"
 LEVELS = [CELL0, "#5C2C12", "#94461C", "#CC6128", OR]
@@ -153,11 +162,30 @@ def wrap(W, H, body, sweep_h):
             f'{body}<rect class="sweep" x="0" y="{y1}" width="160" height="{y2 - y1}" fill="url(#sw)"/></g></svg>')
 
 
+def recopier_si_recent(precedent, out):
+    try:
+        maj = json.load(open(os.path.join(precedent, "etat-contributions.json")))["maj"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+    if time.time() - maj >= RAFRAICHIR or not all(os.path.exists(os.path.join(precedent, f)) for f in FICHIERS):
+        return False
+    for f in FICHIERS + ("etat-contributions.json",):
+        shutil.copy(os.path.join(precedent, f), os.path.join(out, f))
+    return True
+
+
 if __name__ == "__main__":
-    user, out = sys.argv[1], sys.argv[2]
-    days = parse(fetch(user, sys.argv[3] if len(sys.argv) > 3 else None))
+    args = sys.argv[1:]
+    opt = lambda nom: args[args.index(nom) + 1] if nom in args else None
+    user, out = args[0], args[1]
+    precedent, local = opt("--precedent"), opt("--html")
+    if precedent and recopier_si_recent(precedent, out):
+        print("contributions : gardées (moins d'une heure)")
+        sys.exit(0)
+    days = parse(fetch(user, local))
     if len(days) < 300:
         sys.exit(f"Calendrier introuvable ou incomplet ({len(days)} jours)")
     open(f"{out}/contributions.svg", "w", encoding="utf-8").write(card_desktop(days))
     open(f"{out}/contributions-mobile.svg", "w", encoding="utf-8").write(card_mobile(days))
-    print("total", stats(days))
+    json.dump({"maj": time.time()}, open(f"{out}/etat-contributions.json", "w"))
+    print("contributions : régénérées", stats(days))
