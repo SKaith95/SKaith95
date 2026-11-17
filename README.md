@@ -16,9 +16,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/snake-light.svg" />
-    <img src="https://raw.githubusercontent.com/SKaith95/SKaith95/output/snake-dark.svg" width="100%" alt="Serpent qui parcourt le calendrier des contributions" />
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/contributions-mobile.svg" />
+    <img src="https://raw.githubusercontent.com/SKaith95/SKaith95/output/contributions.svg" width="100%" alt="Contributions des 12 derniers mois" />
   </picture>
 </p>
 
