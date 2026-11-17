@@ -11,6 +11,7 @@ import sys
 import urllib.request
 
 JEUX = [129135814237722]  # +1 Spider Evolution
+# Le nombre de joueurs en ligne est affiché par un badge en direct dans le README.
 
 OR, BG, TXT, MUTED, LINE, GREEN = "#FD843C", "#121214", "#FFFFFF", "#8A8B94", "#2C2D33", "#3DD68C"
 SANS = "'Helvetica Neue', Helvetica, Arial, sans-serif"
@@ -100,10 +101,9 @@ def carte(j):
         f'<text class="up" x="316" y="78" font-family="{MONO}" font-size="13" font-weight="700" fill="{OR}" letter-spacing="2">JEU ROBLOX · {e(j["studio"].upper())}</text>',
         f'<text class="up d1" x="314" y="138" font-family="{SANS}" font-size="52" font-weight="900" fill="{TXT}" letter-spacing="-1">{e(j["nom"])}</text>',
         f'<text class="up d1" x="316" y="174" font-family="{SANS}" font-size="20" fill="#A9A9B2">{e(j["accroche"])}</text>',
-        stat(316, 232, "EN JEU", court(j["joueurs"]), "d2", live=True),
-        stat(486, 232, "VISITES", court(j["visites"]), "d3"),
-        stat(656, 232, "FAVORIS", court(j["favoris"]), "d4"),
-        stat(826, 232, "J'AIME", aime, "d4"),
+        stat(316, 232, "VISITES", court(j["visites"]), "d2"),
+        stat(516, 232, "FAVORIS", court(j["favoris"]), "d3"),
+        stat(716, 232, "J'AIME", aime, "d4"),
         bouton(956, 222, 208, 52, 18),
     ]
     return wrap(1200, 320, "".join(body))
@@ -120,13 +120,12 @@ def carte_mobile(j):
         f'<text class="up" x="160" y="78" font-family="{MONO}" font-size="11" font-weight="700" fill="{MUTED}" letter-spacing="1">{e(j["studio"].upper())}</text>',
         f'<text class="up d1" x="22" y="196" font-family="{SANS}" font-size="{taille_nom}" font-weight="900" fill="{TXT}" letter-spacing="-1">{nom}</text>',
         f'<text class="up d1" x="24" y="226" font-family="{SANS}" font-size="15" fill="#A9A9B2">{e(j["accroche"])}</text>',
-        stat(24, 274, "EN JEU", court(j["joueurs"]), "d2", 26, live=True),
-        stat(210, 274, "VISITES", court(j["visites"]), "d3", 26),
-        stat(24, 350, "FAVORIS", court(j["favoris"]), "d4", 26),
-        stat(210, 350, "J'AIME", aime, "d4", 26),
-        bouton(24, 412, 352, 52, 18),
+        stat(24, 274, "VISITES", court(j["visites"]), "d2", 26),
+        stat(152, 274, "FAVORIS", court(j["favoris"]), "d3", 26),
+        stat(280, 274, "J'AIME", aime, "d4", 26),
+        bouton(24, 340, 352, 52, 18),
     ]
-    return wrap(400, 492, "".join(body))
+    return wrap(400, 420, "".join(body))
 
 
 TITRE = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 70" width="1200" height="70">'
