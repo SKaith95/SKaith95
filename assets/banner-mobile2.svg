@@ -30,8 +30,8 @@
 </g>
 <rect x="22" y="48" width="356" height="2" fill="#111111"/>
 <g clip-path="url(#name)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900">
-  <g class="echo" fill="none" stroke="#FFF4EA" stroke-width="2"><text x="20" y="196" font-size="160" textLength="112" lengthAdjust="spacingAndGlyphs">K</text><text x="138" y="196" font-size="160" textLength="114" lengthAdjust="spacingAndGlyphs">A</text><text x="258" y="196" font-size="160" textLength="40" lengthAdjust="spacingAndGlyphs">I</text><text x="304" y="196" font-size="160" textLength="100" lengthAdjust="spacingAndGlyphs">S</text></g>
-  <g fill="#111111"><text class="L l0" x="20" y="196" font-size="160" textLength="112" lengthAdjust="spacingAndGlyphs">K</text><text class="L l1" x="138" y="196" font-size="160" textLength="114" lengthAdjust="spacingAndGlyphs">A</text><text class="L l2" x="258" y="196" font-size="160" textLength="40" lengthAdjust="spacingAndGlyphs">I</text><text class="L l3" x="304" y="196" font-size="160" textLength="100" lengthAdjust="spacingAndGlyphs">S</text></g>
+  <g class="echo" fill="none" stroke="#FFF4EA" stroke-width="2"><text x="20" y="196" font-size="160" textLength="104" lengthAdjust="spacingAndGlyphs">K</text><text x="132" y="196" font-size="160" textLength="106" lengthAdjust="spacingAndGlyphs">A</text><text x="246" y="196" font-size="160" textLength="36" lengthAdjust="spacingAndGlyphs">I</text><text x="290" y="196" font-size="160" textLength="88" lengthAdjust="spacingAndGlyphs">S</text></g>
+  <g fill="#111111"><text class="L l0" x="20" y="196" font-size="160" textLength="104" lengthAdjust="spacingAndGlyphs">K</text><text class="L l1" x="132" y="196" font-size="160" textLength="106" lengthAdjust="spacingAndGlyphs">A</text><text class="L l2" x="246" y="196" font-size="160" textLength="36" lengthAdjust="spacingAndGlyphs">I</text><text class="L l3" x="290" y="196" font-size="160" textLength="88" lengthAdjust="spacingAndGlyphs">S</text></g>
 </g>
 <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#111111">
   <text class="fade f2" x="22" y="262" font-size="23" font-weight="800">Étudiant</text>

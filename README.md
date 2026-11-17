@@ -1,6 +1,6 @@
 <p align="center">
   <picture>
-    <source media="(max-width: 600px)" srcset="./assets/banner-mobile.svg" />
+    <source media="(max-width: 600px)" srcset="./assets/banner-mobile2.svg" />
     <img src="./assets/banner-v7.svg" width="100%" alt="Kais — Étudiant en première année à Epitech, créateur de Tandem" />
   </picture>
 </p>
