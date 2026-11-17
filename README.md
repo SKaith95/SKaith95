@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./assets/kais-header.svg" width="100%" alt="Kais — Étudiant en première année à Epitech, créateur de Tandem" />
+  <img src="./assets/banner-v3.svg" width="100%" alt="Kais — Étudiant en première année à Epitech, créateur de Tandem" />
 </p>
 
 <p align="center">
   <a href="https://github.com/SKaith95/tandem">
-    <img src="./assets/tandem.svg" width="100%" alt="Tandem — Claude et ChatGPT côte à côte, pour créer des jeux Roblox à plusieurs" />
+    <img src="./assets/card-v3.svg" width="100%" alt="Tandem — Claude et ChatGPT côte à côte, qui travaillent ensemble sur tes projets" />
   </a>
 </p>
 
