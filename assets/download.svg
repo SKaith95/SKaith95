@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60">
+<style>.a { animation: a 1.6s ease-in-out infinite; } @keyframes a { 50% { transform: translateY(3px); } }</style>
+<rect width="300" height="60" rx="12" fill="#FD843C"/>
+<text x="28" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="800" fill="#111111">Télécharger Tandem</text>
+<g class="a"><path d="M262 20v18m-7-7 7 7 7-7" stroke="#111111" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

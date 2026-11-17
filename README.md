@@ -10,8 +10,6 @@
 
 <p align="center">
   <a href="https://github.com/SKaith95/tandem/releases/latest">
-    <img src="https://img.shields.io/badge/Télécharger_Tandem-FD843C?style=for-the-badge&logo=windows&logoColor=white" alt="Télécharger Tandem" />
+    <img src="./assets/download.svg" width="260" alt="Télécharger Tandem" />
   </a>
-  &nbsp;
-  <img src="https://img.shields.io/github/downloads/SKaith95/tandem/total?style=for-the-badge&label=t%C3%A9l%C3%A9chargements&color=FD5D57&labelColor=060B24" alt="téléchargements" />
 </p>
