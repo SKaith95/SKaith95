@@ -1,4 +1,4 @@
-name: Carte des contributions
+name: Cartes du profil
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [.github/scripts/contributions.py, .github/workflows/contributions.yml]
+    paths: [.github/scripts/**, .github/workflows/contributions.yml]
 
 permissions:
   contents: write
@@ -16,10 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Générer les cartes
+      - name: Générer les cartes (contributions et jeux)
         run: |
           mkdir -p dist
           python3 .github/scripts/contributions.py "${{ github.repository_owner }}" dist
+          python3 .github/scripts/jeux.py dist
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
