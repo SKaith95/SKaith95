@@ -1,11 +1,10 @@
 name: Cartes du profil
 
-# Toutes les 5 minutes : joueurs en ligne sur les cartes de jeux.
-# Une fois par heure : visites, favoris, j'aime et carte des contributions
-# (entre deux, les scripts reprennent l'état gardé sur la branche output).
+# Une fois par heure : visites, favoris, j'aime et carte des contributions.
+# Les joueurs en ligne sont affichés en direct par un badge dans le README.
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "7 * * * *"   # toutes les heures
   workflow_dispatch:
   push:
     branches: [main]

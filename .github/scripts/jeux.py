@@ -3,9 +3,10 @@
 Usage : python jeux.py <dossier_sortie> [--precedent <dossier>] [--sans-icone]
 Ajoute un jeu en ajoutant son identifiant de place dans JEUX.
 
-Les joueurs en ligne sont relus à chaque passage (toutes les 5 minutes).
-Les visites, favoris, j'aime et l'icône ne sont rafraîchis qu'une fois par heure :
-entre deux, on reprend les valeurs gardées dans etat-jeux.json du passage précédent.
+Les visites, favoris, j'aime et l'icône sont rafraîchis une fois par heure
+(entre deux, on reprend les valeurs gardées dans etat-jeux.json).
+Les joueurs en ligne ne sont pas sur la carte : un badge en direct dans le README
+s'en charge, sous la carte, et mène au jeu.
 """
 import base64
 import html
@@ -81,7 +82,7 @@ def icone(j, x, y, s):
     else:
         img = f'<rect x="{x}" y="{y}" width="{s}" height="{s}" fill="#2A2B31" clip-path="url(#ic)"/>'
     return (f'<defs><clipPath id="ic"><rect x="{x}" y="{y}" width="{s}" height="{s}" rx="{s * .18:.0f}"/></clipPath></defs>'
-            f'<g class="float">{img}<rect x="{x}" y="{y}" width="{s}" height="{s}" rx="{s * .18:.0f}" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/></g>')
+            f'<g>{img}<rect x="{x}" y="{y}" width="{s}" height="{s}" rx="{s * .18:.0f}" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/></g>')
 
 
 def stat(x, y, label, valeur, cls, taille=30, live=False):
@@ -111,11 +112,9 @@ def carte(j):
         f'<text class="up" x="316" y="78" font-family="{MONO}" font-size="13" font-weight="700" fill="{OR}" letter-spacing="2">JEU ROBLOX · {e(j["studio"].upper())}</text>',
         f'<text class="up d1" x="314" y="138" font-family="{SANS}" font-size="52" font-weight="900" fill="{TXT}" letter-spacing="-1">{e(j["nom"])}</text>',
         f'<text class="up d1" x="316" y="174" font-family="{SANS}" font-size="20" fill="#A9A9B2">{e(j["accroche"])}</text>',
-        stat(316, 232, "EN JEU", court(j["joueurs"]), "d2", live=True),
-        stat(486, 232, "VISITES", court(j["visites"]), "d3"),
-        stat(656, 232, "FAVORIS", court(j["favoris"]), "d4"),
-        stat(826, 232, "J'AIME", aime, "d4"),
-        bouton(956, 222, 208, 52, 18),
+        stat(316, 232, "VISITES", court(j["visites"]), "d2"),
+        stat(516, 232, "FAVORIS", court(j["favoris"]), "d3"),
+        stat(716, 232, "J'AIME", aime, "d4"),
     ]
     return wrap(1200, 320, "".join(body))
 
@@ -131,13 +130,11 @@ def carte_mobile(j):
         f'<text class="up" x="160" y="78" font-family="{MONO}" font-size="11" font-weight="700" fill="{MUTED}" letter-spacing="1">{e(j["studio"].upper())}</text>',
         f'<text class="up d1" x="22" y="196" font-family="{SANS}" font-size="{taille_nom}" font-weight="900" fill="{TXT}" letter-spacing="-1">{nom}</text>',
         f'<text class="up d1" x="24" y="226" font-family="{SANS}" font-size="15" fill="#A9A9B2">{e(j["accroche"])}</text>',
-        stat(24, 274, "EN JEU", court(j["joueurs"]), "d2", 26, live=True),
-        stat(210, 274, "VISITES", court(j["visites"]), "d3", 26),
-        stat(24, 350, "FAVORIS", court(j["favoris"]), "d4", 26),
-        stat(210, 350, "J'AIME", aime, "d4", 26),
-        bouton(24, 412, 352, 52, 18),
+        stat(24, 274, "VISITES", court(j["visites"]), "d2", 26),
+        stat(152, 274, "FAVORIS", court(j["favoris"]), "d3", 26),
+        stat(280, 274, "J'AIME", aime, "d4", 26),
     ]
-    return wrap(400, 492, "".join(body))
+    return wrap(400, 336, "".join(body))
 
 
 TITRE = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 70" width="1200" height="70">'
