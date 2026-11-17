@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner-v5.svg" width="100%" alt="Kais — Étudiant en première année à Epitech, créateur de Tandem" />
+  <img src="./assets/banner-v6.svg" width="100%" alt="Kais — Étudiant en première année à Epitech, créateur de Tandem" />
 </p>
 
 <p align="center">

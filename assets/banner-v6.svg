@@ -19,7 +19,7 @@
 @keyframes echo { from { opacity: 0; transform: translate(0,0); } to { opacity: 1; transform: translate(9px,-9px); } }
 @keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes tick { to { transform: translateX(-900px); } }
+@keyframes tick { to { transform: translateX(-516px); } }
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes bar { to { transform: scaleX(1); } }
 </style>
@@ -54,5 +54,5 @@
 <path d="M18 96V78H36" stroke="#111111" stroke-width="2" fill="none"/><path d="M1182 96V78H1164" stroke="#111111" stroke-width="2" fill="none"/><path d="M18 294V312H36" stroke="#111111" stroke-width="2" fill="none"/><path d="M1182 294V312H1164" stroke="#111111" stroke-width="2" fill="none"/>
 <!-- ticker -->
 <rect x="0" y="330" width="1200" height="90" fill="#111111"/>
-<g class="tick" font-family="SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="26" font-weight="700" fill="#FD843C" text-anchor="middle"><text x="115" y="384">TANDEM</text><text x="265" y="384">✦</text><text x="415" y="384">EPITECH</text><text x="565" y="384">✦</text><text x="715" y="384">KAIS</text><text x="865" y="384">✦</text><text x="1015" y="384">TANDEM</text><text x="1165" y="384">✦</text><text x="1315" y="384">EPITECH</text><text x="1465" y="384">✦</text><text x="1615" y="384">KAIS</text><text x="1765" y="384">✦</text><text x="1915" y="384">TANDEM</text><text x="2065" y="384">✦</text><text x="2215" y="384">EPITECH</text><text x="2365" y="384">✦</text><text x="2515" y="384">KAIS</text><text x="2665" y="384">✦</text></g>
+<g class="tick" font-family="SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="26" font-weight="700" fill="#FD843C"><text x="0.0" y="384" textLength="93.6">TANDEM</text><text x="127.6" y="384">✦</text><text x="177.2" y="384" textLength="109.2">EPITECH</text><text x="320.4" y="384">✦</text><text x="370.0" y="384" textLength="62.4">KAIS</text><text x="466.4" y="384">✦</text><text x="516.0" y="384" textLength="93.6">TANDEM</text><text x="643.6" y="384">✦</text><text x="693.2" y="384" textLength="109.2">EPITECH</text><text x="836.4" y="384">✦</text><text x="886.0" y="384" textLength="62.4">KAIS</text><text x="982.4" y="384">✦</text><text x="1032.0" y="384" textLength="93.6">TANDEM</text><text x="1159.6" y="384">✦</text><text x="1209.2" y="384" textLength="109.2">EPITECH</text><text x="1352.4" y="384">✦</text><text x="1402.0" y="384" textLength="62.4">KAIS</text><text x="1498.4" y="384">✦</text><text x="1548.0" y="384" textLength="93.6">TANDEM</text><text x="1675.6" y="384">✦</text><text x="1725.2" y="384" textLength="109.2">EPITECH</text><text x="1868.4" y="384">✦</text><text x="1918.0" y="384" textLength="62.4">KAIS</text><text x="2014.4" y="384">✦</text></g>
 </g></svg>
