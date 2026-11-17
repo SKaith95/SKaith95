@@ -35,7 +35,10 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SKaith95/SKaith95/output/titre-jeux.svg" width="100%" alt="Mes jeux" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/titre-jeux-mobile.svg" />
+    <img src="https://raw.githubusercontent.com/SKaith95/SKaith95/output/titre-jeux.svg" width="100%" alt="Mes jeux" />
+  </picture>
 </p>
 
 <p align="center">

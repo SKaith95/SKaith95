@@ -133,10 +133,15 @@ TITRE = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 70" width="
          f'<text x="0" y="44" font-family="{MONO}" font-size="20" font-weight="700" fill="{OR}" letter-spacing="4">MES JEUX</text>'
          f'<rect x="150" y="37" width="1050" height="2" fill="{OR}" fill-opacity=".35"/></svg>')
 
+TITRE_MOBILE = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 50" width="400" height="50">'
+                f'<text x="0" y="32" font-family="{MONO}" font-size="17" font-weight="700" fill="{OR}" letter-spacing="3">MES JEUX</text>'
+                f'<rect x="124" y="26" width="276" height="2" fill="{OR}" fill-opacity=".35"/></svg>')
+
 if __name__ == "__main__":
     out = sys.argv[1]
     avec_icone = "--sans-icone" not in sys.argv
     open(f"{out}/titre-jeux.svg", "w", encoding="utf-8").write(TITRE)
+    open(f"{out}/titre-jeux-mobile.svg", "w", encoding="utf-8").write(TITRE_MOBILE)
     for place in JEUX:
         j = infos(place, avec_icone)
         open(f"{out}/jeu-{place}.svg", "w", encoding="utf-8").write(carte(j))
