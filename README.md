@@ -1,6 +1,6 @@
 <!-- ===================== BANNIÈRE ===================== -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=Salut,%20moi%20c'est%20Enzo%20👋&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Étudiant%20à%20Epitech&descAlignY=58&descSize=18" alt="banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=Salut,%20moi%20c'est%20Kais%20👋&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Étudiant%20à%20Epitech&descAlignY=58&descSize=18" alt="banner" />
 </p>
 
 <!-- ===================== TEXTE ANIMÉ ===================== -->
@@ -20,9 +20,9 @@
 ## 🧑‍💻 À propos de moi
 
 ```c
-#include "enzo.h"
+#include "kais.h"
 
-student_t enzo = {
+student_t kais = {
     .school    = "Epitech",
     .languages = {"C", "C++", "Python", "Haskell", "Bash"},
     .os        = "Linux 🐧",
@@ -59,8 +59,8 @@ student_t enzo = {
 ## 📊 Stats GitHub
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=SKaith95&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SKaith95&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="top langs" />
+  <img height="180" src="./profile-summary-card-output/tokyonight/3-stats.svg" alt="stats" />
+  <img height="180" src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" alt="langages" />
 </p>
 
 <p align="center">
