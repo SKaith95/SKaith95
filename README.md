@@ -15,6 +15,14 @@
 </p>
 
 <p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/snake-light.svg" />
+    <img src="https://raw.githubusercontent.com/SKaith95/SKaith95/output/snake-dark.svg" width="100%" alt="Serpent qui parcourt le calendrier des contributions" />
+  </picture>
+</p>
+
+<p align="center">
   <a href="https://github.com/SKaith95/tandem/releases/latest">
     <img src="./assets/download.svg" width="260" alt="Télécharger Tandem" />
   </a>
