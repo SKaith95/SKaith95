@@ -1,100 +1,32 @@
-<!-- ===================== BANNIÈRE ===================== -->
+<h1 align="center">Salut, moi c'est Kais 👋</h1>
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=Salut,%20moi%20c'est%20Kais%20👋&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Étudiant%20à%20Epitech&descAlignY=58&descSize=18" alt="banner" />
+  Étudiant à <b>Epitech</b> · je crée des jeux Roblox et des outils autour de l'IA
 </p>
 
-<!-- ===================== TEXTE ANIMÉ ===================== -->
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=%C3%89tudiant+%40+Epitech;Passionn%C3%A9+de+C+%2F+C%2B%2B;Je+code+sous+Linux;Toujours+en+train+d%27apprendre" alt="Typing SVG" />
+  <img src="https://skillicons.dev/icons?i=c,cpp,lua,python,linux,git&theme=dark" alt="skills" />
+</p>
+
+<br/>
+
+<h3 align="center">🚀 Mon projet</h3>
+
+<p align="center">
+  <a href="https://github.com/SKaith95/tandem">
+    <img src="https://capsule-render.vercel.app/api?type=rounded&color=0:7F5AF0,100:2CB67D&height=120&text=Tandem&fontSize=48&fontColor=ffffff&desc=Claude%20et%20ChatGPT%20c%C3%B4te%20%C3%A0%20c%C3%B4te&descSize=16&descAlignY=78&fontAlignY=40" alt="Tandem" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=SKaith95&label=Visites&color=36bcf7&style=flat-square" alt="visites" />
-  <a href="https://github.com/SKaith95?tab=followers"><img src="https://img.shields.io/github/followers/SKaith95?label=Followers&style=flat-square&color=36bcf7" alt="followers" /></a>
-</p>
-
----
-
-## 🧑‍💻 À propos de moi
-
-```c
-#include "kais.h"
-
-student_t kais = {
-    .school    = "Epitech",
-    .languages = {"C", "C++", "Python", "Haskell", "Bash"},
-    .os        = "Linux 🐧",
-    .learning  = "Toujours plus de projets 🚀",
-    .motto     = "Segfault today, fix tomorrow.",
-};
-```
-
-- 🎓 Étudiant à **Epitech**, l'école de l'expertise informatique
-- 🔭 Je travaille sur mes projets Epitech et quelques projets perso
-- 🌱 J'apprends en ce moment : **C++ avancé**, **réseau** et **DevOps**
-- 🤝 Ouvert à la collaboration et aux **stages**
-- ⚡ Fun fact : j'ai déjà passé plus de temps sur `valgrind` que sur Netflix
-
----
-
-## 🛠️ Langages & outils
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,haskell,python,bash,js&theme=dark" alt="langages" />
-  <br/>
-  <img src="https://skillicons.dev/icons?i=linux,git,github,githubactions,docker,vim,vscode&theme=dark" alt="outils" />
+  Claude et ChatGPT côte à côte, pour créer des jeux Roblox à plusieurs.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Makefile-427819?style=for-the-badge&logo=gnu&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSFML-8CC445?style=for-the-badge&logo=sfml&logoColor=white" />
-  <img src="https://img.shields.io/badge/Valgrind-B8001F?style=for-the-badge&logo=gnu&logoColor=white" />
-  <img src="https://img.shields.io/badge/Criterion-2F80ED?style=for-the-badge&logo=testcafe&logoColor=white" />
-</p>
-
----
-
-## 📊 Stats GitHub
-
-<p align="center">
-  <img height="180" src="./profile-summary-card-output/tokyonight/3-stats.svg" alt="stats" />
-  <img height="180" src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" alt="langages" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=SKaith95&theme=tokyonight&hide_border=true" alt="streak" />
-</p>
-
-<p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=SKaith95&theme=tokyo-night&hide_border=true&area=true" alt="activité" />
-</p>
-
----
-
-## 🐍 Mes contributions, version snake
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SKaith95/SKaith95/output/github-snake.svg" />
-    <img alt="snake" src="https://raw.githubusercontent.com/SKaith95/SKaith95/output/github-snake.svg" />
-  </picture>
-</p>
-
----
-
-## 📫 Me contacter
-
-<p align="center">
-  <a href="https://github.com/SKaith95"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <!-- Décommente et complète les liens ci-dessous -->
-  <!-- <a href="https://www.linkedin.com/in/TON_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a> -->
-  <!-- <a href="mailto:TON_EMAIL"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a> -->
-</p>
-
-<!-- ===================== PIED DE PAGE ===================== -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer" alt="footer" />
+  <a href="https://github.com/SKaith95/tandem/releases/latest">
+    <img src="https://img.shields.io/badge/Télécharger-Windows-7F5AF0?style=for-the-badge&logo=windows&logoColor=white" alt="Télécharger Tandem" />
+  </a>
+  <a href="https://github.com/SKaith95/tandem">
+    <img src="https://img.shields.io/badge/Voir_le_projet-2CB67D?style=for-the-badge&logo=github&logoColor=white" alt="Voir le projet" />
+  </a>
 </p>
